@@ -5,6 +5,8 @@ describe('randomNumber', () => {
         expect(randomNumber(1, 1)).toBe(1)
     })
     test('throw error if min/max is not a number', () => {
-        expect(randomNumber('hello', 1)).toThrow()
-    })
+        expect(() => randomNumber('hello', 1)).toThrow(TypeError);
+        expect(() => randomNumber(1, 'hello')).toThrow(TypeError);
+        expect(() => randomNumber('hello', 'hello')).toThrow(TypeError);
+    });
 })
