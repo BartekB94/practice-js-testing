@@ -10,6 +10,6 @@ describe('randomNumber', () => {
         expect(() => randomNumber('hello', 'hello')).toThrow(TypeError);
     });
     test('throw error if min > max', () => {
-        expect(randomNumber(4, 3)).toThrow(RangeError)
+        expect(() => randomNumber(4, 3)).toThrow(RangeError);
     })
 })
