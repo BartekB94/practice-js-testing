@@ -12,4 +12,11 @@ describe('randomNumber', () => {
     test('throw error if min > max', () => {
         expect(() => randomNumber(4, 3)).toThrow(RangeError);
     })
+    test('returns a number within the range', () => {
+        const min = 2
+        const max = 5
+        const result = randomNumber(min, max)
+        expect(result).toBeGreaterThanOrEqual(min)
+        expect(result).toBeLessThanOrEqual(max)
+    });
 })
