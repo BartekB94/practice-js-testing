@@ -4,11 +4,12 @@ describe('randomNumber', () => {
     test('return 1 when min=1 and max=1', () => {
         expect(randomNumber(1, 1)).toBe(1)
     })
-    test('throw error if min/max is not a number', () => {
-        expect(() => randomNumber('hello', 1)).toThrow(TypeError);
-        expect(() => randomNumber(1, 'hello')).toThrow(TypeError);
-        expect(() => randomNumber('hello', 'hello')).toThrow(TypeError);
+    test('throw error if min is not a number', () => {
+        expect(() => randomNumber('hello', 1)).toThrow('Min is not a number');
     });
+    test('throw error if max is not a number', () => {
+        expect(() => randomNumber(1, 'hello')).toThrow('Max is not a number');
+    })
     test('throw error if min > max', () => {
         expect(() => randomNumber(4, 3)).toThrow(RangeError);
     })
